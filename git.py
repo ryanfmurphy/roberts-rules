@@ -1,4 +1,5 @@
 # recommended to use python 3
+from __future__ import print_function
 from cmd import cmd
 import re
 
@@ -16,7 +17,7 @@ def git_reset(*args):    return cmd('git', 'reset', *args)
 
 def git_commit(*args):
 	if '-m' not in args:
-		print 'Specify a commit message with -m'
+		print('Specify a commit message with -m')
 		# (otherwise we hang when we try to open $EDITOR)
 		return False
 	return cmd('git', 'commit', *args)

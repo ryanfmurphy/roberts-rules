@@ -16,7 +16,7 @@ def git_merge(*args):    return cmd('git', 'merge', *args)
 def git_reset(*args):    return cmd('git', 'reset', *args)
 
 def git_commit(*args):
-	if '-m' not in args:
+	if '-m' not in args and '-am' not in args:
 		print('Specify a commit message with -m')
 		# (otherwise we hang when we try to open $EDITOR)
 		return False
